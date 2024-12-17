@@ -57,7 +57,7 @@ _"neuro_game_sdk.messages.outgoing.startup"_
 
 </details>
 
-https://love2d.org/wiki/Game_Distribution
+https://Love2D.org/wiki/Game_Distribution
 
 ## Game lifecycle hooks
 To integrate SDK in your game you need to import couple modules and use them as follows (example for Love2D)

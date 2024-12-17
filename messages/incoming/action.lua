@@ -53,7 +53,7 @@ function Action:_validate(_command, message_data, state)
     end
 
     if type(parsed_data) ~= 'table' then
-        print("Action data can only be a table. Other respones are not permitted for the API implementation in Love2d.")
+        print("Action data can only be a table.")
         return ExecutionResult.failure(Strings.action_failed_invalid_json)
     end
 

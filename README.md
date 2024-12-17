@@ -71,10 +71,12 @@ luarocks --lua-version=5.1 path
     2.3. Remove `LUA_PATH=` and `LUA_CPATH=`. 
     
     2.4. Then you should be left with two strings that contains some paths separated by `;`, that's what we need.
-3. Create a file called like `luarocks-paths.lua` and paste your strings like in the template below:
+3. Create a file called like `luarocks-paths.lua` and paste your strings like in the template below (also check "Building Love2D game with SDK" section below):
 ```lua
-package.path = package.path .. "Your first string goes here"
-package.cpath = package.cpath .. "Your second string goes here"
+love.filesystem.setRequirePath(
+        "your 1st string goes here" ..
+        "your 2nd string goes here"
+)
 ```
 4. Add following line to your main file. Now your Love2D should properly resolve paths from dependencies and you can `require` them wihtout failing a build.
 
@@ -87,7 +89,7 @@ require('luarocks_paths')
 # Usage
 To learn how to use the SDK read [this doc](USAGE.md)
 
-## Building Love2d game with SDK
+## Building Love2D game with SDK
  To build app with this luarocks package you need to:
 1. copy content of following folders to lib folder in the root of you game project:   
 ``%AppData%\Roaming\luarocks\share\lua\5.1``  
