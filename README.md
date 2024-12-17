@@ -106,4 +106,4 @@ love.filesystem.setRequirePath(
 3. Follow steps from official [docs](https://love2d.org/wiki/Game_Distribution)
 
 # Example
-For working game "Tic Tac Toe by AlexejheroDev" reimplementation example in Love2D you can check [this folder](examples/tic%20tac%20toe) and get built version from release
+For working game "Tic Tac Toe by AlexejheroDev" reimplementation example in Love2D you can check [this folder](examples/tic%20tac%20toe) and get built version from [release](https://github.com/Gunoshozo/lua-neuro-sama-game-api/releases/latest)
