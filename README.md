@@ -71,7 +71,7 @@ luarocks --lua-version=5.1 path
     2.3. Remove `LUA_PATH=` and `LUA_CPATH=`. 
     
     2.4. Then you should be left with two strings that contains some paths separated by `;`, that's what we need.
-3. Create a file called like `luarocks-paths.lua` and paste your strings like in the template below (also check "Building Love2D game with SDK" section below):
+3. Create a file called like `luarocks_paths.lua` and paste your strings like in the template below (also check "Building Love2D game with SDK" section below):
 ```lua
 love.filesystem.setRequirePath(
         "your 1st string goes here" ..
