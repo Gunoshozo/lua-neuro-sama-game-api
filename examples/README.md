@@ -1,0 +1,1 @@
+### Do not add this folder or it's contents to .rockspec file, it should not be part of the package
