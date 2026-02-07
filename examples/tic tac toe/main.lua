@@ -1,5 +1,6 @@
 require('luarocks_paths')
 
+local ActionsForce = require("neuro_game_sdk.messages.outgoing.action_force")
 local Context = require("neuro_game_sdk.messages.outgoing.context")
 local GameHooks = require("neuro_game_sdk.game_hooks")
 local SDKConfig = require("neuro_game_sdk.config")
@@ -203,7 +204,7 @@ function switch_player()
     currentPlayer = (currentPlayer == "X") and "O" or "X"
     if currentPlayer == "O" then
         local actionWindow = ActionWindow:new()
-        actionWindow:set_force(0.0, "It is your turn. Please place an O.", "", false)
+        actionWindow:set_force(0.0, "It is your turn. Please place an O.", "", false, ActionsForce.Priority.LOW)
         actionWindow:add_action(PlayOAction:new(actionWindow, { grid = grid, make_a_move = make_a_move }))
         actionWindow:register()
     end

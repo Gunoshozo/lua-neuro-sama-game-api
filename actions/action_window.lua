@@ -22,6 +22,7 @@ function ActionWindow:new()
         _action_force_query = "",
         _action_force_state = "",
         _action_force_ephemeral_context = false,
+        _action_force_priority = ActionsForce.Priority.LOW,
         _end_enabled = false,
         _end_timeout = 0.0,
         _actions = {}, -- of 'type' NeuroAction[]
@@ -36,7 +37,8 @@ function ActionWindow:new()
     return obj
 end
 
-function ActionWindow:set_force(timeout, query, state, ephemeral_context)
+function ActionWindow:set_force(timeout, query, state, ephemeral_context, priority)
+    priority = priority or ActionsForce.Priority.LOW
     if not self:_validate_frozen() then
         return
     end
@@ -46,6 +48,7 @@ function ActionWindow:set_force(timeout, query, state, ephemeral_context)
     self._action_force_query = query
     self._action_force_state = state
     self._action_force_ephemeral_context = ephemeral_context
+    self._action_force_priority = priority
 end
 
 function ActionWindow:set_end(end_timeout)
@@ -140,7 +143,7 @@ function ActionWindow:_send_force()
         return action:get_name()
     end)
     WebsocketConnection.send(ActionsForce:new(self._action_force_query, self._action_force_state,
-        self._action_force_ephemeral_context, array))
+        self._action_force_ephemeral_context, array, self._action_force_priority))
 end
 
 function ActionWindow:_end()
