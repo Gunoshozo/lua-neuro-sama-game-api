@@ -1,4 +1,5 @@
 local OutgoingMessage = require("neuro_game_sdk.messages.api.outgoing_message")
+local ActionsRegister = require("neuro_game_sdk.messages.outgoing.actions_register")
 require("neuro_game_sdk.utils.table_utils")
 
 local ActionsUnregister = setmetatable({}, { __index = OutgoingMessage })

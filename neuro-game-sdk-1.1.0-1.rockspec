@@ -1,8 +1,8 @@
-package = "neuro-game-sdk"         
-version = "1.0.0-1"          
+package = "neuro-game-sdk"
+version = "1.1.0-1"
 source = {
-    url = "https://github.com/Gunoshozo/lua-neuro-sama-game-api.git", 
-    tag = "v1.0.0"           
+    url = "https://github.com/Gunoshozo/lua-neuro-sama-game-api.git",
+    tag = "v1.1.0"
 }
 description = {
     summary = "Lua implementation of neuro game sdk",
@@ -10,7 +10,7 @@ description = {
 
     ]],
     homepage = "https://github.com/Gunoshozo/lua-neuro-sama-game-api",
-    license = "MIT"          
+    license = "MIT"
 }
 dependencies = {
     "lua = 5.1",
@@ -21,7 +21,7 @@ dependencies = {
 build = {
     type = "builtin",
     modules = {
-        ["neuro_game_sdk.config"] = "config.lua", 
+        ["neuro_game_sdk.config"] = "config.lua",
         ["neuro_game_sdk.game_hooks"] = "game_hooks.lua",
         ["neuro_game_sdk.string_consts"] = "string_consts.lua",
 
